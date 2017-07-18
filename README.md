@@ -1,7 +1,7 @@
 # Debian with zsh
 
 Debian stretch with zsh and grml config and some additional packages:
-- `vim`
+- `vim` with the ultimate vimrc from [https://github.com/amix/vimrc]()
 - `wget`
 - `curl`
 - `git`

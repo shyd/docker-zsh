@@ -8,6 +8,8 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN wget -qO /root/.zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 
 COPY zshrc.local /root/.zshrc.local
+COPY vimrc /root/.vimrc
+COPY vim /root/.vim
 
 RUN mkdir /data
 
