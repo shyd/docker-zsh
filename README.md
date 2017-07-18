@@ -1,5 +1,7 @@
 # Debian with zsh
 
+[![Build Status](https://travis-ci.org/shyd/docker-zsh.svg?branch=master)](https://travis-ci.org/shyd/docker-zsh)
+
 Debian stretch with zsh and grml config and some additional packages:
 - `vim` with the ultimate vimrc from <https://github.com/amix/vimrc>
 - `wget`
