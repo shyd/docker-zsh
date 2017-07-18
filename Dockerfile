@@ -7,6 +7,8 @@ RUN rm -rf /var/lib/apt/lists/*
 
 RUN wget -qO /root/.zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 
+COPY zshrc.local /root/.zshrc.local
+
 RUN mkdir /data
 
 WORKDIR /data

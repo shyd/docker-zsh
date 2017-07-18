@@ -1,4 +1,5 @@
-# docker-zsh
+# Debian with zsh
+
 Debian stretch with zsh and grml config and some additional packages:
 - `vim`
 - `wget`
@@ -9,3 +10,11 @@ Debian stretch with zsh and grml config and some additional packages:
 - `zip` and `unzip`
 
 Run with `docker run -it --rm -v $(pwd):/data shyd/zsh`
+
+## Persistent zsh history
+
+To keep the zsh history through multiple launches outside of the container run
+```
+touch ~/.zsh_history_docker # just run this once, otherwise docker creates a directory instead of a file
+docker run -it --rm -v $(pwd):/data -v ~/.zsh_history_docker:/root/.zsh_history shyd/zsh
+```
