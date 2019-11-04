@@ -1,7 +1,7 @@
 FROM debian:latest
 
 RUN apt-get update && \
-    apt-get -y install vim zsh wget curl git tree rsync openssh-client zip mysql-client
+    apt-get -y install vim zsh wget curl git tree rsync openssh-client zip mysql-client dnsutils
 
 RUN rm -rf /var/lib/apt/lists/*
 
