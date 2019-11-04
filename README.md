@@ -11,6 +11,7 @@ Debian stretch with zsh and grml config and some additional packages:
 - openssh-client (e.g. `scp`)
 - `zip` and `unzip`
 - `mysql-client`
+- `dnsutils`
 
 Run with `docker run -it --rm -v $(pwd):/data shyd/zsh`
 
