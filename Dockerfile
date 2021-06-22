@@ -1,15 +1,13 @@
 FROM debian:latest
 
-RUN apt-get update && \
-    apt-get -y install vim zsh wget curl git tree rsync openssh-client zip default-mysql-client dnsutils
+RUN apt update && \
+    apt -y install curl
+
+ENV TERM=xterm-256color
+
+RUN curl https://raw.githubusercontent.com/shyd/dotfiles/main/run-once.sh | bash
 
 RUN rm -rf /var/lib/apt/lists/*
-
-RUN wget -qO /root/.zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
-
-COPY zshrc.local /root/.zshrc.local
-COPY vimrc /root/.vimrc
-COPY vim /root/.vim
 
 RUN mkdir /data
 
