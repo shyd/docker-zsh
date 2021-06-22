@@ -5,8 +5,8 @@ jobs:
     steps:
     - checkout
     - run: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-    - run: docker build -t shyd/zsh .
-    - run: docker push shyd/zsh
+    - run: docker build -t shyd/zsh:grml .
+    - run: docker push shyd/zsh:grml
 workflows:
   version: 2
   workflow:
@@ -14,4 +14,4 @@ workflows:
     - build:
         filters:
           branches:
-            only: oh-my-zsh
+            only: master
