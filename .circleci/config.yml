@@ -2,12 +2,16 @@ version: 2
 jobs:
   build:
     machine: true
-    branches:
-      only: oh-my-zsh
     steps:
-      - checkout
-      - run: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-
-      - run: docker build -t shyd/zsh .
-
-      - run: docker push shyd/zsh
+    - checkout
+    - run: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+    - run: docker build -t shyd/zsh .
+    - run: docker push shyd/zsh
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build:
+        filters:
+          branches:
+            only: oh-my-zsh
