@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    branches:
+      only:
+        - oh-my-zsh
+    steps:
+      - checkout
+      - run: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+
+      - run: docker build -t shyd/zsh .
+
+      - run: docker push shyd/zsh
+  build-grml:
+    machine: true
+    branches:
+      only:
+        - master
+    steps:
+      - checkout
+      - run: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+
+      - run: docker build -t shyd/zsh:grml .
+
+      - run: docker push shyd/zsh:grml
