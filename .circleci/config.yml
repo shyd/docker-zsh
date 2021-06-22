@@ -3,8 +3,7 @@ jobs:
   build:
     machine: true
     branches:
-      only:
-        - oh-my-zsh
+      only: oh-my-zsh
     steps:
       - checkout
       - run: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
@@ -15,8 +14,7 @@ jobs:
   build-grml:
     machine: true
     branches:
-      only:
-        - master
+      only: master
     steps:
       - checkout
       - run: echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
