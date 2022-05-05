@@ -13,6 +13,20 @@ workflows:
   workflow:
     jobs:
     - build:
+        context:
+          - general
         filters:
           branches:
             only: oh-my-zsh
+  weekly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * 0"
+          filters:
+            branches:
+              only:
+                - oh-my-zsh
+    jobs:
+      - build:
+          context:
+            - general
